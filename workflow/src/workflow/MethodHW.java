@@ -49,7 +49,7 @@ public class MethodHW {
         sieve[0] = false;
         sieve[1] = false;
 
-        for (int curr = 4; curr <= Math.sqrt(num); ++curr) {
+        for (int curr = 2; curr <= Math.sqrt(num); ++curr) {
             if (sieve[curr]) {
                 for (int i = curr * curr; i <= num; i += curr) {
                     sieve[i] = false;
@@ -63,7 +63,7 @@ public class MethodHW {
         return sieve[num];
     }
 
-    
+
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 
