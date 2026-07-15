@@ -43,8 +43,8 @@ public class MethodHW {
         }
 		boolean[] sieve = new boolean[num + 1];
 		Arrays.fill(sieve, true);
-		sieve[2] = true;
-		sieve[3] = true;
+		sieve[0] = false;
+		sieve[1] = false;
 		for (int curr = 4; curr <= num; ++curr) {
 			for (int i = 2; i <= Math.sqrt(num); ++i) {
 				if (curr % i == 0) {
