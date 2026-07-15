@@ -35,6 +35,12 @@ public class MethodHW {
 
 	// 4. 정수 한 개를 받아서 소수(prime number)라면 true를 아니라면 false를 반환하는 메소드를 만들고 호출해 보세요.
 	public static boolean isPrime(int num) {
+        if (num==2||num==3){
+            return true;
+        }
+        if (num<=1){
+            reutrn false;
+        }
 		boolean[] sieve = new boolean[num + 1];
 		Arrays.fill(sieve, true);
 		sieve[2] = false;
