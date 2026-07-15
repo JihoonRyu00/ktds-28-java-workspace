@@ -39,7 +39,7 @@ public class MethodHW {
             return true;
         }
         if (num<=1){
-            reutrn false;
+            return false;
         }
 		boolean[] sieve = new boolean[num + 1];
 		Arrays.fill(sieve, true);
