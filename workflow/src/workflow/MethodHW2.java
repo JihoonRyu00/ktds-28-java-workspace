@@ -24,7 +24,7 @@ public class MethodHW2 {
 			System.out.println("Divide by 0.");
 			return;
 		}
-		System.out.println(a + " / " + b + " = " + (a / b));
+		System.out.println(a + " / " + b + " = " + ((float) a / b));
 	}
 
 	// 4-2. 정수형 변수 2개를 파라미터로 받아, 나누기의 결과(실수)를 반환하는 메소드.
