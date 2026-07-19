@@ -29,7 +29,7 @@ public class MethodHW2 {
 
 	// 4. 정수형 변수 2개를 파라미터로 받아, 나누기의 결과(실수)를 반환하는 메소드.
 	public static float returnDivideResult(int a, int b) {
-		return (a / b);
+		return (float) a / b;
 	}
 
 	// 5. 실수형 변수 1개와 정수형 파라미터 1개를 받아 소수점 이하 자리수를 변경하여 반환하는 메소드.
@@ -85,7 +85,7 @@ public class MethodHW2 {
 	}
 
 	// 11. 정수형 변수 1개를 파라미터로 받아, 4부터 정수형 변수까지의 범위 중 소수(Prime Number)만 출력하는 메소드.
-	public static void printPrimeNumber(int n) { // n은 4 이하의 정수
+	public static void printPrimeNumber(int n) { // n은 4 이상의 정수
 		boolean[] isPrime = new boolean[n + 1];
 		Arrays.fill(isPrime, true);
 		isPrime[0] = false;
@@ -147,6 +147,7 @@ public class MethodHW2 {
 			for (int b : arr2) {
 				if (a == b) {
 					System.out.print(a);
+					break;
 				}
 			}
 		}
@@ -156,13 +157,39 @@ public class MethodHW2 {
 	//
 	// -> 고유([1,2,3,4,5], [9,7,454,1,2,3]) ==> 4, 5, 9. 7, 454
 	public static void printNotDuplicates(int[] arr1, int[] arr2) {
-		int dupN=0;
+		int dupI = 0;
 		int[] dups = new int[Math.max(arr1.length, arr2.length)];
 		for (int a : arr1) {
 			for (int b : arr2) {
 				if (a == b) {
-					System.out.print(a);
+					dups[dupI] = a;
+					dupI++;
+					break;
 				}
+			}
+		}
+		for (int a : arr1) {
+			boolean isDup = false;
+			for (int i = 0; i < dupI; ++i) {
+				if (a == dups[i]) {
+					isDup = true;
+					break;
+				}
+			}
+			if (!isDup) {
+				System.out.print(a);
+			}
+		}
+		for (int a : arr2) {
+			boolean isDup = false;
+			for (int i = 0; i < dupI; ++i) {
+				if (a == dups[i]) {
+					isDup = true;
+					break;
+				}
+			}
+			if (!isDup) {
+				System.out.print(a);
 			}
 		}
 	}
