@@ -18,7 +18,7 @@ public class MethodHW2 {
 		return (a + b + c);
 	}
 
-	// 4. 정수형 변수 2개를 파라미터로 받아, 나누기의 결과(실수)를 출력하는 메소드.
+	// 4-1. 정수형 변수 2개를 파라미터로 받아, 나누기의 결과(실수)를 출력하는 메소드.
 	public static void printDivideResult(int a, int b) {
 		if (b == 0) {
 			System.out.println("Divide by 0.");
@@ -27,7 +27,7 @@ public class MethodHW2 {
 		System.out.println(a + " / " + b + " = " + (a / b));
 	}
 
-	// 4. 정수형 변수 2개를 파라미터로 받아, 나누기의 결과(실수)를 반환하는 메소드.
+	// 4-2. 정수형 변수 2개를 파라미터로 받아, 나누기의 결과(실수)를 반환하는 메소드.
 	public static float returnDivideResult(int a, int b) {
 		return (float) a / b;
 	}
@@ -197,7 +197,96 @@ public class MethodHW2 {
 	// 16. 정수형 배열 변수 1개를 파라미터로 받아, 모든 값들을 배수로 만드는(반환X) 메소드.
 	//
 	// -> 호출 이후에 main 메소드 내부에서 배열 내부의 값들을 모두 출력.
+	public static void doubleArray(int[] arr) {
+		for (int i = 0; i < arr.length; ++i) {
+			arr[i] *= 2;
+		}
+	}
+
 	public static void main(String[] args) {
-		System.out.println(returnRevisedFloat(10.33333333f, 0));
+		// 1
+		printTwoIntegers(10, 20);
+
+		// 2
+		printSumOfTwoIntegers(15, 30);
+
+		// 3
+		int sum3 = returnSumOfThreeIntegers(5, 10, 15);
+		System.out.println("3번 결과: " + sum3);
+
+		// 4-1
+		printDivideResult(5, 2);
+
+		// 4-2
+		float divResult = returnDivideResult(5, 2);
+		System.out.println("4-2번 결과: " + divResult);
+
+		// 5
+		System.out.println("5번 결과: " + returnRevisedFloat(10.33333333f, 2));
+
+		// 6
+		float maxFloat = returnLargestFloat(5.5f, 7.7f);
+		System.out.println("6번 결과: " + maxFloat);
+
+		// 7
+		float minFloat = returnLeastFloat(4.4f, 2.2f, 9.9f, 1.1f);
+		System.out.println("7번 결과: " + minFloat);
+
+		// 8
+		System.out.print("8번 결과: ");
+		int[] sampleArr1 = { 2, 3, 5, 7, 8, 11 };
+		printMultiples(sampleArr1);
+		System.out.println();
+
+		// 9
+		System.out.print("9번 결과: ");
+		printStringRepeat("자바", 3);
+		System.out.println();
+
+		// 10
+		System.out.println("10번 결과: ");
+		printGugudan(3);
+
+		// 11
+		System.out.print("11번 결과: ");
+		printPrimeNumber(15);
+		System.out.println();
+
+		// 12
+		int[] sampleArr2 = { 10, 20, 30, 40, 50 };
+		System.out.println("12번 결과(정상 인덱스): " + returnValueOfIndex(sampleArr2, 2));
+		System.out.println("12번 결과(벗어난 인덱스): " + returnValueOfIndex(sampleArr2, 5));
+
+		// 13
+		int[] sampleArr3 = { 1, 2, 6, 4, 9 };
+		System.out.println("13번 결과: " + returnTheFirstMultipleOfThree(sampleArr3));
+
+		// 14
+		System.out.print("14번 결과: ");
+		int[] dupArr1 = { 1, 2, 3, 4, 5 };
+		int[] dupArr2 = { 9, 7, 454, 1, 2, 3 };
+		printDuplicates(dupArr1, dupArr2);
+		System.out.println();
+
+		// 15
+		System.out.print("15번 결과: ");
+		printNotDuplicates(dupArr1, dupArr2);
+		System.out.println();
+
+		// 16
+		System.out.print("16번 결과(변경 전): ");
+		int[] sampleArr4 = { 1, 2, 3, 4, 5 };
+		for (int n : sampleArr4) {
+			System.out.print(n + " ");
+		}
+		System.out.println();
+
+		doubleArray(sampleArr4);
+
+		System.out.print("16번 결과(변경 후): ");
+		for (int n : sampleArr4) {
+			System.out.print(n + " ");
+		}
+		System.out.println();
 	}
 }
