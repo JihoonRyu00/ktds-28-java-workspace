@@ -2,9 +2,9 @@ package kyobobook;
 
 public class Author {
 	/**
-	 * 작가 나이
+	 * 작가 생년월일
 	 */
-	int age;
+	String birthDay;
 	/**
 	 * 작가 성별
 	 */
