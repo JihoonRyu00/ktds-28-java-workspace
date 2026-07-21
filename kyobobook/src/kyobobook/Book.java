@@ -4,7 +4,7 @@ public class Book {
 	/**
 	 * ISBN
 	 */
-	int ISBN;
+	String ISBN;
 	/**
 	 * 책 쪽수
 	 */
