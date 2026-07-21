@@ -11,8 +11,8 @@ public class Temp {
 
 		Car testCar = new Car();
 		testCar.pressEngineStartButton();
-		System.out.println(testCar.zero100Seconds);
-		System.out.println(testCar.notExistedField);
+//		System.out.println(testCar.zero100Seconds);
+//		System.out.println(testCar.notExistedField);
 
 	}
 }
