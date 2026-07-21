@@ -1,4 +1,4 @@
-package oop;
+package com.ktdsuniversity.edu.oop.vendingmachine;
 
 /**
  * 자판기 음료가 들어있는 자판기에 돈을 넣고 음료의 번호를 입력하면 음료가 추출된다. 거스름돈이 남았을 경우, 사용자에게 돌려준다.

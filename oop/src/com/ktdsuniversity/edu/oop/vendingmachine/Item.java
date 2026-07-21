@@ -1,4 +1,4 @@
-package oop;
+package com.ktdsuniversity.edu.oop.vendingmachine;
 
 /**
  * 자판기에서 판매하는 상품의 정보

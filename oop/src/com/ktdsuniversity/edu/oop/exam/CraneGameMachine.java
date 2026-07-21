@@ -1,4 +1,4 @@
-package oop;
+package com.ktdsuniversity.edu.oop.exam;
 
 /**
  * 인형뽑기 게임 흉내내기 실습

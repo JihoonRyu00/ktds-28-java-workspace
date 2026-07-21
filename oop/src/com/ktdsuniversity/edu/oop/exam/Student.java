@@ -1,4 +1,4 @@
-package oop;
+package com.ktdsuniversity.edu.oop.exam;
 
 /**
  * 학생 평균 및 학점 구하기 실습
