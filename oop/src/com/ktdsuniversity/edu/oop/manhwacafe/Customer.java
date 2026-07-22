@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.oop.manhwaCafe;
+package com.ktdsuniversity.edu.oop.manhwacafe;
 
 /** 소비자 클래스 */
 public class Customer {

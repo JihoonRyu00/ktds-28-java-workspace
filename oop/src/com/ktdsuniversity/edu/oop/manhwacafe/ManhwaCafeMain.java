@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.oop.manhwaCafe;
+package com.ktdsuniversity.edu.oop.manhwacafe;
 
 import java.util.Scanner;
 

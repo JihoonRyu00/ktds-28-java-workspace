@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.oop.manhwaCafe;
+package com.ktdsuniversity.edu.oop.manhwacafe;
 
 /** 만화 카페 클래스 */
 public class ManhwaCafe {
