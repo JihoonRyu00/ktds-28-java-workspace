@@ -64,7 +64,7 @@ public class Buyer {
 
 	public static void main(String[] args) {
 		Buyer buyer = new Buyer(10000, 0);
-		Seller seller = new Seller(10, 2000, 0);
+		Seller seller = new Seller(10, 2000, 0, 0);
 		buyer.buy(seller, 3);
 	}
 
