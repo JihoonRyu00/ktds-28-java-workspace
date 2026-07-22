@@ -18,6 +18,10 @@ public class ManhwaCafe {
 		this.setBalance(balance);
 	}
 
+	private int getShelfSize() {
+		return SHELF_SIZE;
+	}
+
 	private int getBalance() {
 		return balance;
 	}
@@ -36,7 +40,7 @@ public class ManhwaCafe {
 
 	public void addNewManhwa(int index, Manhwa manhwa) {
 		if (this.manhwaList[index] != null) {
-			System.out.println("이미 채워져 있는 칸입니다.");
+			System.out.println("해당 카페 인덱스에는 이미 만화책이 존재합니다.");
 			return;
 		}
 		this.manhwaList[index] = manhwa;
@@ -58,10 +62,26 @@ public class ManhwaCafe {
 		this.setBalance(this.getBalance() + cash);
 	}
 
+	public boolean isValidIndex(int index) {
+		return (index >= 0 || index < this.getShelfSize());
+	}
+
 	public void rentProcess(Customer customer, int customerManhwaIndex, int cafeManhwaIndex) {
 		Manhwa manhwa = this.manhwaList[cafeManhwaIndex];
+		if (!this.isValidIndex(cafeManhwaIndex)) {
+			System.out.println("해당 카페 인덱스는 존재하지 않습니다.");
+			return;
+		}
+		if (!customer.isValidIndex(customerManhwaIndex)) {
+			System.out.println("해당 대여자 인덱스는 존재하지 않습니다.");
+			return;
+		}
 		if (manhwa == null) {
-			System.out.println("해당 인덱스에는 만화책이 존재하지 않습니다.");
+			System.out.println("해당 카페 인덱스에는 만화책이 존재하지 않습니다.");
+			return;
+		}
+		if (customer.getRentingManhwas()[customerManhwaIndex] != null) {
+			System.out.println("해당 대여자 인덱스에는 이미 만화책이 존재합니다.");
 			return;
 		}
 		if (manhwa.isRented()) {
@@ -81,10 +101,10 @@ public class ManhwaCafe {
 	public void returnProcess(Customer customer, int customerManhwaIndex, int cafeManhwaIndex) {
 		Manhwa manhwa = customer.getRentingManhwas()[customerManhwaIndex];
 		if (manhwa == null) {
-			System.out.println("해당 인덱스에는 만화책이 존재하지 않습니다.");
+			System.out.println("해당 대여자 인덱스에는 만화책이 존재하지 않습니다.");
 			return;
 		}
-		customer.getRentingManhwas()[customerManhwaIndex].setRented(false);
+		manhwa.setRented(false);
 		customer.getRentingManhwas()[customerManhwaIndex] = null;
 		System.out.println("반납이 완료되었습니다.");
 	}

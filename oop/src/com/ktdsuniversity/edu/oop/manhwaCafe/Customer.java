@@ -24,6 +24,10 @@ public class Customer {
 		return ID;
 	}
 
+	public int getMaxRent() {
+		return MAX_RENT;
+	}
+
 	public int getBalance() {
 		return balance;
 	}
@@ -50,6 +54,10 @@ public class Customer {
 			}
 		}
 		System.out.println("===========================");
+	}
+
+	public boolean isValidIndex(int index) {
+		return (index >= 0 || index < this.getMaxRent());
 	}
 
 	private boolean hasSufficientBalance(int fee) {
