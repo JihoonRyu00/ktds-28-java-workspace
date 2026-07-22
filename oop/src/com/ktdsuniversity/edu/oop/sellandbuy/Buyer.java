@@ -62,6 +62,15 @@ public class Buyer {
 		this.balance -= seller.sell(quantity);
 	}
 
+	/**
+	 * 구매자 상태 출력
+	 */
+	public void printStatus() {
+		System.out.println("===== 구매자의 정보 =====");
+		System.out.println("현재 잔고\t: " + this.balance);
+		System.out.println("장바구니\t: " + this.cart);
+	}
+
 	public static void main(String[] args) {
 		Buyer buyer = new Buyer(10000, 0);
 		Seller seller = new Seller(10, 2000, 0, 0);
