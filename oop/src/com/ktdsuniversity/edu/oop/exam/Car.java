@@ -8,7 +8,7 @@ public class Car {
 	// 클래스의 인스턴스가 독립적으로 가지고 있는 정보들
 	boolean isEngineStart;
 	int speed;
-	int zero100Seconds;
+	public int zero100Seconds;
 
 	/**
 	 * 기본 생성자

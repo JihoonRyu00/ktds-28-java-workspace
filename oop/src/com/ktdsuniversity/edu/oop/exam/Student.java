@@ -41,7 +41,7 @@ public class Student {
 	 * 
 	 * @return
 	 */
-	public int getSumAllScores() {
+	private int getSumAllScores() {
 		return java + python + cpp + csharp;
 	}
 
