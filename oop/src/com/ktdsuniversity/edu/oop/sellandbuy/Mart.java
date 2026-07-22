@@ -16,5 +16,10 @@ public class Mart {
 
 		buyer.printStatus();
 		musinsa.printStatus();
+
+		buyer.buy(kream, 2);
+
+		buyer.printStatus();
+		kream.printStatus();
 	}
 }

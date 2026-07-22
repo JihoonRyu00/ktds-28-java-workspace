@@ -69,5 +69,6 @@ public class Buyer {
 		System.out.println("===== 구매자의 정보 =====");
 		System.out.println("현재 잔고\t: " + this.balance);
 		System.out.println("장바구니\t: " + this.cart);
+		System.out.println();
 	}
 }

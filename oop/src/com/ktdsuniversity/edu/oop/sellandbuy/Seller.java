@@ -25,11 +25,11 @@ public class Seller {
 	 * @param totalIncome
 	 * @param salesCount
 	 */
-	Seller(int stock, int price, int totalIncome, int salesCount) {
+	Seller(int stock, int price, int salesCount, int totalIncome) {
 		this.stock = stock;
 		this.price = price;
-		this.totalIncome = totalIncome;
 		this.salesCount = salesCount;
+		this.totalIncome = totalIncome;
 	}
 
 	/**
@@ -73,5 +73,6 @@ public class Seller {
 		System.out.println("판매 상품 단가\t: " + this.price);
 		System.out.println("총 판매 수량\t: " + this.salesCount);
 		System.out.println("총 매출액\t: " + this.totalIncome);
+		System.out.println();
 	}
 }
