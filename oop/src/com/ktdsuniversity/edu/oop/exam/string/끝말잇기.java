@@ -12,7 +12,7 @@ public class 끝말잇기 {
 			System.out.print("다음 단어를 입력하시오. (마지막 단어: " + lastWord + ") >> ");
 			currWord = sc.nextLine();
 //			currWord = currWord.strip();
-			currWord = currWord.replaceAll("[ \t]+","");
+			currWord = currWord.replaceAll("[\\s]+","");
 			System.out.println("입력한 단어: " + currWord);
 
 			// case 1
