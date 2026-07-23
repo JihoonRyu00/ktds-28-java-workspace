@@ -12,8 +12,16 @@ public class 끝말잇기 {
 			currWord = sc.nextLine();
 			currWord = currWord.strip();
 			System.out.println("입력한 단어: " + currWord);
-			if (!currWord.matches("[가-힣]{3,}")
-					|| !currWord.startsWith(lastWord.toCharArray()[lastWord.length() - 1] + "")) {
+			
+			//case 1
+//			if (!currWord.matches("[가-힣]{3,}")
+//					|| !currWord.startsWith(lastWord.toCharArray()[lastWord.length() - 1] + "")) {
+
+			// case 2
+//			if (!currWord.matches("[가-힣]{3,}") || !currWord.startsWith(lastWord.charAt(lastWord.length() - 1) + "")) {
+
+			// case3
+			if (!currWord.matches("[가-힣]{3,}") || !currWord.startsWith(lastWord.substring(lastWord.length() - 1))) {
 				System.out.println("틀렸습니다.");
 				break;
 			}
