@@ -24,7 +24,7 @@ public class MathCalculator {
 	 * 두 수를 연산하여 반환
 	 * 
 	 * @see com.ktdsuniversity.edu.oop.exam.statics.Operators 연산자 종류
-	 * @param operator 연산 종류 (0: 더하기, 1: 빼기, 2: 곱하기, 3: 나누기 몫, 4: 나누기 나머지)
+	 * @param operator 연산자 종류
 	 * @return
 	 */
 	public int getCoumputeResult(int operator) {
