@@ -1,0 +1,58 @@
+<mxfile host="Electron">
+  <diagram name="페이지-1" id="o70p3AHv1x022arDAxDF">
+    <mxGraphModel dx="772" dy="880" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-9" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-1" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="Run" vertex="1">
+          <mxGeometry height="80" width="120" x="354" y="20" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-10" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Scanner 생성" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="150" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-11" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-3" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="lastWord=&quot;자전거&quot;&lt;div&gt;currWord=&quot;&quot;&lt;/div&gt;&lt;div&gt;선언 및 할당&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-12" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-4" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Scanner -&amp;gt; currWord" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="370" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-13" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-5" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-5" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="currWord 앞뒤 공백 제거" vertex="1">
+          <mxGeometry height="60" width="120" x="354" y="480" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-14" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-8">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-16" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-6" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-15">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-6" parent="1" style="rhombus;whiteSpace=wrap;html=1;" value="currWord가 한글 3글자 이상&lt;div&gt;&amp;amp;&amp;amp;&lt;/div&gt;&lt;div&gt;currWorf[0] == lastWord[-1]&lt;/div&gt;" vertex="1">
+          <mxGeometry height="80" width="192" x="318" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-8" parent="1" style="ellipse;whiteSpace=wrap;html=1;" value="종료" vertex="1">
+          <mxGeometry height="80" width="120" x="354" y="720" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-17" edge="1" parent="1" source="7GLcJmaqrISiwLsLR9iF-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" target="7GLcJmaqrISiwLsLR9iF-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="7GLcJmaqrISiwLsLR9iF-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="lastWord=currWord" vertex="1">
+          <mxGeometry height="60" width="120" x="580" y="480" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
