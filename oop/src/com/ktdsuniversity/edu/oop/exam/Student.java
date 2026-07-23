@@ -22,6 +22,17 @@ public class Student {
 	private int csharp;
 
 	/**
+	 * 기본 생성자
+	 */
+	public Student() {
+//		this.java = 100;
+//		this.python = 100;
+//		this.cpp = 100;
+//		this.csharp = 100;
+		this(100, 100, 100, 100);
+	}
+
+	/**
 	 * 생성자
 	 * 
 	 * @param java
