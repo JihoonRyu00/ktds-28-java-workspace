@@ -17,7 +17,7 @@ public class P181856 {
 		}
 		if (sum1 > sum2) {
 			return 1;
-		} else if (sum2 < sum2) {
+		} else if (sum1 < sum2) {
 			return -1;
 		}
 		return 0;
