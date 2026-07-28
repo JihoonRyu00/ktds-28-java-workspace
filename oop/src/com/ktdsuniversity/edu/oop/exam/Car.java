@@ -17,14 +17,14 @@ public class Car {
 		System.out.println("생성자가 호출됨.\n" + this);
 		this.pressEngineStartButton();
 	}
-	
+
 	public Car(int zero100Seconds) {
 //		Car();
-		this.zero100Seconds=zero100Seconds;
+		this.zero100Seconds = zero100Seconds;
 		System.out.println("생성자가 호출됨.\n" + this);
 		this.pressEngineStartButton();
 	}
-	
+
 	// 인스턴스 메서드 (메서드) 정의
 	// 엔진 켜기 / 끄기
 	public void pressEngineStartButton() {
@@ -54,6 +54,12 @@ public class Car {
 		if (isEngineStart) {
 			speed -= pressure;
 		}
+	}
+
+	@Override
+	public String toString() {
+		
+		return "Class name: " + this.getClass().getName() + ", zero100Seconds: " + this.zero100Seconds;
 	}
 
 	public static void main(String[] args) {
@@ -100,5 +106,8 @@ public class Car {
 		System.out.println(kona.speed);
 		System.out.println(carnival.isEngineStart);
 		System.out.println(carnival.speed);
+
+		System.out.println(kona);
+		System.out.println(carnival);
 	}
 }
