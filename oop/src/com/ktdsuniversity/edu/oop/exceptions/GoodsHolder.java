@@ -1,15 +1,14 @@
 package com.ktdsuniversity.edu.oop.exceptions;
 
-import java.beans.IntrospectionException;
-
 public class GoodsHolder {
 
 	private Goods[] goods;
 	private int goodsIndex;
 
 	public GoodsHolder(int goodsCount) {
-		if (goodsCount < 0) {
-			goodsCount = 0;
+		if (goodsCount <= 0) {
+			HolderInitiateException hie = new HolderInitiateException("잘못된 인덱스 개수입니다. 0보다 큰 값을 입력하세요.");
+			throw hie;
 		}
 		this.goods = new Goods[goodsCount];
 	}
@@ -35,16 +34,23 @@ public class GoodsHolder {
 		if (price == null) {
 			return;
 		}
-		price = price.replaceAll("[^0-9]", "");
-		if (price.isBlank()) {
+//		price = price.replaceAll("[^0-9]", "");
+//		if (price.isBlank()) {
+//			return;
+//		}
+//		long tempPrice = Long.parseLong(price);
+//		if (tempPrice < Integer.MIN_VALUE || tempPrice > Integer.MAX_VALUE) {
+//			return;
+//		}
+//		int intPrice = (int) tempPrice;
+//		this.addGoods(name, intPrice);
+		int intPrice = 0;
+		try {
+			intPrice = Integer.parseInt(price);
+		} catch (NumberFormatException nfe) {
+			System.out.println("숫자 변환 실패: " + nfe.getMessage());
 			return;
 		}
-		long tempPrice = Long.parseLong(price);
-		if (tempPrice < Integer.MIN_VALUE || tempPrice > Integer.MAX_VALUE) {
-			return;
-		}
-		int intPrice = (int) tempPrice;
-		this.addGoods(name, intPrice);
 	}
 
 	public void removeGoods(int goodsIndex) {

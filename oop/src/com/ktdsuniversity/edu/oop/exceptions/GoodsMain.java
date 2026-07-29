@@ -4,6 +4,16 @@ public class GoodsMain {
 
 	public static void main(String[] args) {
 
+		GoodsHolder capsuleHolder = null;
+		while (capsuleHolder == null) {
+			int randomCount = (int) (Math.random() * 1000) - 300;
+			try {
+				capsuleHolder = new GoodsHolder(randomCount);
+			} catch (HolderInitiateException hie) {
+				System.out.println(hie.getMessage());
+			}
+		}
+
 		GoodsHolder gh = new GoodsHolder(10);
 
 		gh.addGoods("1111", "1_111");
