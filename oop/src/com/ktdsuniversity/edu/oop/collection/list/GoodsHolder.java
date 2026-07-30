@@ -1,32 +1,23 @@
-package com.ktdsuniversity.edu.oop.exceptions;
+package com.ktdsuniversity.edu.oop.collection.list;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.ktdsuniversity.edu.oop.exceptions.Goods;
 
 public class GoodsHolder {
 
-	private Goods[] goods;
-	private int goodsIndex;
+	private List<Goods> goods;
 
-	public GoodsHolder(int goodsCount) {
-		if (goodsCount < 0) {
-			goodsCount = 0;
-		}
-		this.goods = new Goods[goodsCount];
-	}
-
-	private void extendGoodsList() {
-		Goods[] newGoods = new Goods[goods.length * 2];
-		System.arraycopy(goods, 0, newGoods, 0, goods.length);
-		this.goods = newGoods;
+	public GoodsHolder() {
+		this.goods = new ArrayList<>();
 	}
 
 	public void addGoods(String name, int price) {
 		if (name == null || name.isBlank()) {
 			return;
 		}
-		if (this.goodsIndex == this.goods.length) {
-			return;
-//			extendGoodsList();
-		}
-		this.goods[this.goodsIndex++] = new Goods(name, price);
+		this.goods.add(new Goods(name, price));
 	}
 
 	public void addGoods(String name, String price) {
@@ -46,15 +37,15 @@ public class GoodsHolder {
 	}
 
 	public void removeGoods(int goodsIndex) {
-		if (goodsIndex >= 0 && goodsIndex < this.goods.length) {
-			this.goods[goodsIndex] = null;
+		if (goodsIndex >= 0 && goodsIndex < this.goods.size()) {
+			this.goods.remove(goodsIndex);
 		}
 	}
 
 	public void printGoodsAt(int index) {
 		Goods goods = null;
-		if (index >= 0 && index < this.goods.length) {
-			goods = this.goods[index];
+		if (index >= 0 && index < this.goods.size()) {
+			goods = this.goods.get(index);
 		}
 		if (goods != null) {
 			String message = "%d. %s(%d)".formatted(index + 1, goods.getName(), goods.getPrice());
@@ -63,7 +54,7 @@ public class GoodsHolder {
 	}
 
 	public void printGoods() {
-		for (int i = 0; i < this.goods.length; i++) {
+		for (int i = 0; i < this.goods.size(); i++) {
 			this.printGoodsAt(i);
 		}
 	}
