@@ -72,7 +72,7 @@ public class Dashboard implements DashboardInterface {
 		Scanner sc = new Scanner(System.in);
 		int cmd = sc.nextInt();
 		while (cmd != 3) {
-			System.out.println();
+			
 			cmd = sc.nextInt();
 			if (cmd == 1) {
 
