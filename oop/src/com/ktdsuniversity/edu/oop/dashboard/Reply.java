@@ -1,16 +1,16 @@
 package com.ktdsuniversity.edu.oop.dashboard;
 
-import java.util.ArrayList;
+import java.util.Date;
 
 public class Reply {
 
 	private final int ID;
 	private String userName;
-	private String date;
+	private Date date;
 	private String content;
 	private int likes;
 
-	public Reply(int nextReplyId, String userName, String date, String content) {
+	public Reply(int nextReplyId, String userName, Date date, String content) {
 		this.ID = nextReplyId;
 		this.userName = userName;
 		this.date = date;
@@ -26,7 +26,7 @@ public class Reply {
 		return this.userName;
 	}
 
-	public String getDate() {
+	public Date getDate() {
 		return this.date;
 	}
 

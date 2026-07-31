@@ -1,5 +1,9 @@
 package com.ktdsuniversity.edu.oop.collection.list;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.StandardOpenOption;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,6 +15,26 @@ public class GoodsHolder {
 
 	public GoodsHolder() {
 		this.goods = new ArrayList<>();
+		this.loadGoods();
+	}
+
+	private void loadGoods() {
+		File db = new File("C:\\Java Exam", "goods.txt");
+		if (db.exists() && db.isFile()) {
+
+			List<String> goodsList = null;
+			try {
+				goodsList = Files.readAllLines(db.toPath());
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
+			if (goodsList != null) {
+				for (String s : goodsList) {
+					String[] temp = s.split(",");
+					this.addGoods(temp[0], temp[1]);
+				}
+			}
+		}
 	}
 
 	public void addGoods(String name, int price) {
@@ -36,6 +60,23 @@ public class GoodsHolder {
 		this.addGoods(name, intPrice);
 	}
 
+	public void addGoods(String name, int price, boolean fileWrite) {
+		this.addGoods(name, price);
+		if (fileWrite) {
+			File db = new File("C:\\Java Exam", "goods.txt");
+			if (!db.getParentFile().exists()) {
+				db.getParentFile().mkdirs();
+			}
+			List<String> data = new ArrayList<>();
+			data.add("%s,%d".formatted(name, price));
+			try {
+				Files.write(db.toPath(), data, StandardOpenOption.APPEND);
+			} catch (IOException ioe) {
+				ioe.printStackTrace();
+			}
+		}
+	}
+
 	public void removeGoods(int goodsIndex) {
 		if (goodsIndex >= 0 && goodsIndex < this.goods.size()) {
 			this.goods.remove(goodsIndex);
@@ -59,4 +100,14 @@ public class GoodsHolder {
 		}
 	}
 
+	public static void main(String[] args) {
+		GoodsHolder gh = new GoodsHolder();
+		gh.printGoods();
+		gh.addGoods("이클립스", 2000, true);
+		gh.addGoods("이클립스2", 5000, true);
+		gh.addGoods("이클립스3", 3000, true);
+		gh.addGoods("이클립스4", 2000, true);
+
+		gh.printGoods();
+	}
 }

@@ -1,20 +1,22 @@
 package com.ktdsuniversity.edu.oop.dashboard;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Article implements ArticleInterface {
 	private final int ID;
 	private String title;
 	private String userName;
-	private String date;
+	private Date date;
 	private String content;
 	private int views;
-	private int nextReplyId;
+	private static int nextReplyId;
 
 	private List<Reply> replyList;
 
-	public Article(int nextArticleId, String title, String userName, String date, String content) {
+	public Article(int nextArticleId, String title, String userName, Date date, String content) {
 		this.ID = nextArticleId;
 		this.title = title;
 		this.userName = userName;
@@ -22,7 +24,7 @@ public class Article implements ArticleInterface {
 		this.content = content;
 		this.views = 0;
 		this.replyList = new ArrayList<>();
-		this.nextReplyId = 1;
+		nextReplyId = 1;
 	}
 
 	public int getID() {
@@ -59,7 +61,7 @@ public class Article implements ArticleInterface {
 		output += "게시물 ID: " + this.ID;
 		output += "\t게시물 제목: " + this.title;
 		output += "\n게시물 작성자: " + this.userName;
-		output += "\t게시물 작성 날짜: " + this.date;
+		output += "\t게시물 작성 날짜: " + this.date.toString();
 		output += "\t게시물 조회수: " + this.views;
 		output += "\n게시물 내용: \n" + this.content + "\n";
 		output += repliesToString();
@@ -73,15 +75,30 @@ public class Article implements ArticleInterface {
 	}
 
 	@Override
-	public void updateContent() {
-		// TODO Auto-generated method stub
-
+	public void updateTitle(String newTitle) {
+		this.title = newTitle;
 	}
 
 	@Override
-	public void addReply() {
-		// TODO Auto-generated method stub
+	public void updateContent(String newContent) {
+		this.content = newContent;
+	}
 
+	@Override
+	public void addReply(Scanner sc) {
+		System.out.print("Enter your name. >> ");
+		String userName = sc.next();
+		userName = userName.strip();
+		if (userName.length() == 0) {
+			ArticleWriterException awe = new ArticleWriterException("작성자명은 반드시 입력해야합니다.");
+			throw awe;
+		}
+		// ====================================
+		Date date = new Date();
+		// ====================================
+		System.out.print("Enter reply content. >> ");
+		String content = sc.next();
+		this.replyList.add(new Reply(nextReplyId++, userName, date, content));
 	}
 
 	@Override
@@ -112,4 +129,14 @@ public class Article implements ArticleInterface {
 		output += "--------------------------------------------------";
 		return output;
 	}
+	
+	@Override
+	public boolean isValidReplyNumber(int replyIndex) {
+//		if (articleIndex < 1 || articleIndex > this.articleList.size()) {
+//			System.out.println("잘못된 게시글 번호입니다.");
+//			return false;
+//		}
+		return true;
+	}
+
 }
