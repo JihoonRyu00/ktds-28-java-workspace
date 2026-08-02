@@ -1,6 +1,6 @@
 package com.ktdsuniversity.edu.oop.inheritance.car;
 
-public class Main {
+public class TestCar {
 
 	public static void turnEngineOn(Vehicle car) {
 		car.turnEngineOn();
