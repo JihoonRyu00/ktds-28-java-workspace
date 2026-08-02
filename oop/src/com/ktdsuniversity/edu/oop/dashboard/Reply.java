@@ -2,7 +2,7 @@ package com.ktdsuniversity.edu.oop.dashboard;
 
 import java.util.Date;
 
-public class Reply {
+public class Reply implements ReplyInterface {
 
 	private final int ID;
 	private String userName;
@@ -41,12 +41,16 @@ public class Reply {
 	@Override
 	public String toString() {
 		String output = "";
-		output += "댓글 ID: " + this.ID;
 		output += "\t댓글 작성자: " + this.userName;
 		output += "\t댓글 작성 날짜: " + this.date;
 		output += "\n\t댓글 내용: " + this.content;
 		output += "\t(♥" + this.likes + ")\n";
 		return output;
+	}
+
+	@Override
+	public void increaseLikes() {
+		this.likes++;
 	}
 
 }

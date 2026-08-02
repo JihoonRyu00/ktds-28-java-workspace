@@ -5,10 +5,8 @@ import java.util.Scanner;
 public interface ArticleInterface {
 
 	int TITLE_LIMIT = 30;
-	int CONTENT_LIMIT = 300;
+//	int CONTENT_LIMIT = 300;
 	int REPLY_LIMIT = 10;
-
-	public abstract void print();
 
 	public abstract void updateTitle(String newTitle);
 
@@ -16,11 +14,15 @@ public interface ArticleInterface {
 
 	public abstract void addReply(Scanner sc);
 
-	public abstract void likeReply();
+	public void deleteReply(int replyNumber);
+
+	void deleteAllReplies();
+
+	void likeReply(int replyNumber);
 
 	public abstract int getReplyCount();
 
 	public abstract void increaseViews();
 
-	public abstract boolean isValidReplyNumber(int replyIndex);
+	public abstract boolean isValidReplyNumber(int replyNumber);
 }

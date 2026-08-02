@@ -12,7 +12,7 @@ public class Article implements ArticleInterface {
 	private Date date;
 	private String content;
 	private int views;
-	private static int nextReplyId;
+	private int nextReplyId;
 
 	private List<Reply> replyList;
 
@@ -48,7 +48,7 @@ public class Article implements ArticleInterface {
 	}
 
 	public int getNextReplyId() {
-		return this.nextReplyId;
+		return nextReplyId;
 	}
 
 	public List<Reply> getReplyList() {
@@ -69,12 +69,6 @@ public class Article implements ArticleInterface {
 	}
 
 	@Override
-	public void print() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
 	public void updateTitle(String newTitle) {
 		this.title = newTitle;
 	}
@@ -87,7 +81,7 @@ public class Article implements ArticleInterface {
 	@Override
 	public void addReply(Scanner sc) {
 		System.out.print("Enter your name. >> ");
-		String userName = sc.next();
+		String userName = sc.nextLine();
 		userName = userName.strip();
 		if (userName.length() == 0) {
 			ArticleWriterException awe = new ArticleWriterException("작성자명은 반드시 입력해야합니다.");
@@ -97,14 +91,36 @@ public class Article implements ArticleInterface {
 		Date date = new Date();
 		// ====================================
 		System.out.print("Enter reply content. >> ");
-		String content = sc.next();
+		String content = sc.nextLine();
 		this.replyList.add(new Reply(nextReplyId++, userName, date, content));
 	}
 
 	@Override
-	public void likeReply() {
-		// TODO Auto-generated method stub
+	public void deleteReply(int replyNumber) {
+		if (!isValidReplyNumber(replyNumber)) {
+			return;
+		}
+		this.replyList.remove(replyNumber - 1);
+		System.out.println("댓글 삭제가 완료되었습니다.");
+	}
 
+	@Override
+	public void deleteAllReplies() {
+		int replyCount = this.replyList.size();
+		if (replyCount == 0) {
+			System.out.println("등록된 댓글이 없습니다.");
+			return;
+		}
+		this.replyList.clear();
+		System.out.println(replyCount + "개의 댓글을 삭제했습니다.");
+	}
+
+	@Override
+	public void likeReply(int replyNumber) {
+		if (!isValidReplyNumber(replyNumber)) {
+			return;
+		}
+		this.replyList.get(replyNumber - 1).increaseLikes();
 	}
 
 	@Override
@@ -122,20 +138,20 @@ public class Article implements ArticleInterface {
 			return "등록된 댓글이 없습니다.\n";
 		}
 		String output = "";
-		output += "---------------------Replies---------------------";
-		for (Reply r : replyList) {
-			output += "↳\t" + r;
+		output += "---------------------Replies---------------------\n";
+		for (int i = 0; i < this.replyList.size(); ++i) {
+			output += "↳\t댓글 번호: " + (i + 1) + this.replyList.get(i);
 		}
 		output += "--------------------------------------------------";
 		return output;
 	}
-	
+
 	@Override
-	public boolean isValidReplyNumber(int replyIndex) {
-//		if (articleIndex < 1 || articleIndex > this.articleList.size()) {
-//			System.out.println("잘못된 게시글 번호입니다.");
-//			return false;
-//		}
+	public boolean isValidReplyNumber(int replyNumber) {
+		if (replyNumber < 1 || replyNumber > this.replyList.size()) {
+			System.out.println("잘못된 댓글 번호입니다.");
+			return false;
+		}
 		return true;
 	}
 
