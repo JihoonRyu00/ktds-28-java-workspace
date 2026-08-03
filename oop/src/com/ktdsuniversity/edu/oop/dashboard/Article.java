@@ -63,7 +63,8 @@ public class Article implements ArticleInterface {
 		output += "\t게시물 조회수: " + this.views;
 		output += "\n게시물 작성자: " + this.userName;
 		output += "\t게시물 작성 날짜: " + this.date.toString();
-		output += "\n게시물 내용: \n" + this.content + "\n\n";
+		output += "\n게시물 내용: \n" + this.content + "\n";
+		output += "-".repeat(50) + "\n";
 		output += repliesToString();
 		return output;
 	}
