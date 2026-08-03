@@ -81,7 +81,7 @@ public class Article implements ArticleInterface {
 
 	@Override
 	public void addReply(Scanner sc) {
-		System.out.print("Enter your name. >> ");
+		System.out.print("작성자 이름을 입력하세요. >> ");
 		String userName = sc.nextLine();
 		userName = userName.strip();
 		if (userName.length() == 0) {
@@ -91,7 +91,7 @@ public class Article implements ArticleInterface {
 		// ====================================
 		Date date = new Date();
 		// ====================================
-		System.out.print("Enter reply content. >> ");
+		System.out.print("내용을 입력하세요. >> ");
 		String content = sc.nextLine();
 		this.replyList.add(new Reply(nextReplyId++, userName, date, content));
 	}
@@ -136,7 +136,7 @@ public class Article implements ArticleInterface {
 
 	private String repliesToString() {
 		if (this.replyList.isEmpty()) {
-			return "-".repeat(50) + "등록된 댓글이 없습니다.";
+			return "-".repeat(50) + "\n등록된 댓글이 없습니다.";
 		}
 		String output = "";
 		output += "--------------------- Replies ---------------------\n";
