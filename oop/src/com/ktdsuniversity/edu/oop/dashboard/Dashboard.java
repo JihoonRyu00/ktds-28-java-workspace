@@ -28,14 +28,14 @@ public class Dashboard implements DashboardInterface {
 
 	@Override
 	public void writeArticle() {
-		System.out.print("Enter article title. >> ");
+		System.out.print("제목을 입력하세요. >> ");
 		String title = sc.nextLine();
 		title = title.strip();
 		if (title.length() == 0 || title.length() > Article.TITLE_LIMIT) {
 			ArticleException ae = new ArticleException("제목은 1글자 이상 30글자 이하로 작성해야만 합니다.");
 			throw ae;
 		}
-		System.out.print("Enter your name. >> ");
+		System.out.print("작성자 이름을 입력하세요. >> ");
 		String userName = sc.nextLine();
 		userName = userName.strip();
 		if (userName.length() == 0) {
