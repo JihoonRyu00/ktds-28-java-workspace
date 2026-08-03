@@ -45,7 +45,7 @@ public class Dashboard implements DashboardInterface {
 		// ====================================
 		Date date = new Date();
 		// ====================================
-		System.out.print("Enter article content. >> ");
+		System.out.print("내용을 입력하세요. >> ");
 		String content = sc.nextLine();
 		articleList.add(new Article(nextArticleId++, title, userName, date, content));
 		System.out.println("게시글 작성이 완료되었습니다.");
