@@ -63,8 +63,7 @@ public class Article implements ArticleInterface {
 		output += "\t게시물 조회수: " + this.views;
 		output += "\n게시물 작성자: " + this.userName;
 		output += "\t게시물 작성 날짜: " + this.date.toString();
-		output += "\n게시물 내용: \n" + this.content + "\n";
-		output += "-".repeat(50) + "\n";
+		output += "\n게시물 내용: \n" + this.content + "\n\n";
 		output += repliesToString();
 		return output;
 	}
@@ -136,10 +135,10 @@ public class Article implements ArticleInterface {
 
 	private String repliesToString() {
 		if (this.replyList.isEmpty()) {
-			return "등록된 댓글이 없습니다.";
+			return "-".repeat(50) + "등록된 댓글이 없습니다.";
 		}
 		String output = "";
-		output += "---------------------Replies---------------------\n";
+		output += "--------------------- Replies ---------------------\n";
 		for (int i = 0; i < this.replyList.size(); ++i) {
 			output += "↳\t댓글 번호: " + (i + 1) + this.replyList.get(i);
 		}
