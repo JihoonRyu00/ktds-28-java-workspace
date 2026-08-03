@@ -1,6 +1,7 @@
 package com.ktdsuniversity.edu.oop.dashboard;
 
 public interface DashboardInterface {
+
 	public abstract void writeArticle();
 
 	public abstract void printAllArticles();

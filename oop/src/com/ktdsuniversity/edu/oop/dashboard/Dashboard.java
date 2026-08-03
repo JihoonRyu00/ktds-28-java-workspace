@@ -8,7 +8,6 @@ import java.util.Scanner;
 public class Dashboard implements DashboardInterface {
 
 	private final Scanner sc;
-
 	private int nextArticleId;
 	private List<Article> articleList;
 
