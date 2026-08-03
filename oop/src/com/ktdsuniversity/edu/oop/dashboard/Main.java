@@ -8,6 +8,8 @@ public class Main {
 
 		Scanner sc = new Scanner(System.in);
 		Dashboard dashboard = new Dashboard(sc);
+		int articleNumber = 0;
+		int replyNumber = 0;
 		int cmd = 0;
 		while (true) {
 			System.out.print(
@@ -26,7 +28,7 @@ public class Main {
 				dashboard.printAllArticles();
 			} else if (cmd == 3) {
 				System.out.print("게시글 번호를 입력하세요. >> ");
-				int articleNumber = Integer.parseInt(sc.nextLine());
+				articleNumber = Integer.parseInt(sc.nextLine());
 				System.out.println();
 				dashboard.printArticle(articleNumber);
 			} else if (cmd == 4) {
@@ -42,15 +44,15 @@ public class Main {
 				dashboard.addReplyOnArticle(Integer.parseInt(sc.nextLine()));
 			} else if (cmd == 8) {
 				System.out.print("게시글 번호를 입력하세요. >> ");
-				int articleNumber = Integer.parseInt(sc.nextLine());
+				articleNumber = Integer.parseInt(sc.nextLine());
 				System.out.print("댓글 번호를 입력하세요. >> ");
-				int replyNumber = Integer.parseInt(sc.nextLine());
+				replyNumber = Integer.parseInt(sc.nextLine());
 				dashboard.deleteReplyOnArticle(articleNumber, replyNumber);
 			} else if (cmd == 9) {
 				System.out.print("게시글 번호를 입력하세요. >> ");
-				int articleNumber = Integer.parseInt(sc.nextLine());
+				articleNumber = Integer.parseInt(sc.nextLine());
 				System.out.print("댓글 번호를 입력하세요. >> ");
-				int replyNumber = Integer.parseInt(sc.nextLine());
+				replyNumber = Integer.parseInt(sc.nextLine());
 				dashboard.likeReplyOnArticle(articleNumber, replyNumber);
 			} else if (cmd == 10) {
 				System.out.print("검색어를 입력하세요. >> ");
