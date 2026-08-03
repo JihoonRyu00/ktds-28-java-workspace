@@ -73,8 +73,10 @@ public class Dashboard implements DashboardInterface {
 		}
 		Article curArticle = this.articleList.get(articleNumber - 1);
 		curArticle.increaseViews();
+		System.out.println("=".repeat(50));
 		System.out.println("게시물 번호: " + (articleNumber - 1));
 		System.out.println(curArticle);
+		System.out.println("=".repeat(50));
 	}
 
 	@Override
