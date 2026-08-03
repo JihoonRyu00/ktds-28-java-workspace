@@ -2,6 +2,8 @@ package com.ktdsuniversity.edu.oop.dashboard;
 
 import java.util.Scanner;
 
+import com.ktdsuniversity.edu.oop.dashboard.data.Dashboard;
+
 public class Main {
 
 	public static enum Cmd {

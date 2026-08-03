@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.oop.dashboard;
+package com.ktdsuniversity.edu.oop.dashboard.exceptions;
 
 public class ArticleException extends RuntimeException {
 

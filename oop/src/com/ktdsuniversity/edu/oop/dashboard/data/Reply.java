@@ -1,6 +1,8 @@
-package com.ktdsuniversity.edu.oop.dashboard;
+package com.ktdsuniversity.edu.oop.dashboard.data;
 
 import java.util.Date;
+
+import com.ktdsuniversity.edu.oop.dashboard.interfaces.ReplyInterface;
 
 public class Reply implements ReplyInterface {
 

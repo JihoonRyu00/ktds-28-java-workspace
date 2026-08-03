@@ -1,9 +1,13 @@
-package com.ktdsuniversity.edu.oop.dashboard;
+package com.ktdsuniversity.edu.oop.dashboard.data;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Scanner;
+
+import com.ktdsuniversity.edu.oop.dashboard.exceptions.ArticleException;
+import com.ktdsuniversity.edu.oop.dashboard.exceptions.ArticleWriterException;
+import com.ktdsuniversity.edu.oop.dashboard.interfaces.DashboardInterface;
 
 public class Dashboard implements DashboardInterface {
 
