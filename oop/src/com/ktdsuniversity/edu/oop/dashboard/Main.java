@@ -11,8 +11,12 @@ public class Main {
 		int cmd = 0;
 		while (true) {
 			System.out.print(
-					"1: 게시글 작성하기\t\t2: 모든 게시글 출력하기\t3: 게시글 정보 출력하기\n4: 게시글 수정하기\t\t5: 게시글 삭제하기\t\t6: 게시글의 개수 출력하기\n7: 게시글에 댓글 작성하기\t8: 게시글에 등록된 댓글 삭제하기\t9: 게시글에 등록된 댓글 추천하기\n10: 게시글 제목으로 검색하기\t11: 게시글 목록 전체 삭제하기\t12: 게시글의 모든 댓글 삭제하기\n다음 행동을 선택하세요. (0: 종료) >> ");
-			cmd = Integer.parseInt(sc.nextLine());
+					"1: 게시글 작성하기\t\t2: 모든 게시글 출력하기\t\t\t3: 게시글 정보 출력하기\n4: 게시글 수정하기\t\t5: 게시글 삭제하기\t\t\t6: 게시글의 개수 출력하기\n7: 게시글에 댓글 작성하기\t8: 게시글에 등록된 댓글 삭제하기\t9: 게시글에 등록된 댓글 추천하기\n10: 게시글 제목으로 검색하기\t11: 게시글 목록 전체 삭제하기\t\t12: 게시글의 모든 댓글 삭제하기\n다음 행동을 선택하세요. (0: 종료) >> ");
+			try {
+				cmd = Integer.parseInt(sc.nextLine());
+			} catch (NumberFormatException nfe) {
+				nfe.printStackTrace();
+			}
 			if (cmd == 0) {
 				System.out.println("대시보드 서비스를 종료합니다.");
 				break;
