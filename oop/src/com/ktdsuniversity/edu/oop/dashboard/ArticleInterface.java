@@ -25,4 +25,5 @@ public interface ArticleInterface {
 	public abstract void increaseViews();
 
 	public abstract boolean isValidReplyNumber(int replyNumber);
+
 }

@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Article implements ArticleInterface {
+	
 	private final int ID;
 	private String title;
 	private String userName;

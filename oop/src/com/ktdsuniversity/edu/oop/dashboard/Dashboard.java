@@ -63,7 +63,6 @@ public class Dashboard implements DashboardInterface {
 			System.out.println(i++ + ". " + a.getTitle() + " (" + a.getReplyCount() + ")");
 		}
 		System.out.println("==================================================");
-
 	}
 
 	@Override
