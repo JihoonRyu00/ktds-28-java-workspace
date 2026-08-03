@@ -31,15 +31,13 @@ public class Dashboard implements DashboardInterface {
 		String title = sc.nextLine();
 		title = title.strip();
 		if (title.length() == 0 || title.length() > Article.TITLE_LIMIT) {
-			ArticleException ae = new ArticleException("제목은 1글자 이상 30글자 이하로 작성해야만 합니다.");
-			throw ae;
+			throw new ArticleException("제목은 1글자 이상 30글자 이하로 작성해야만 합니다.");
 		}
 		System.out.print("작성자 이름을 입력하세요. >> ");
 		String userName = sc.nextLine();
 		userName = userName.strip();
 		if (userName.length() == 0) {
-			ArticleWriterException awe = new ArticleWriterException("작성자명은 반드시 입력해야합니다.");
-			throw awe;
+			throw new ArticleWriterException("작성자명은 반드시 입력해야합니다.");
 		}
 		// ====================================
 		Date date = new Date();
@@ -92,8 +90,7 @@ public class Dashboard implements DashboardInterface {
 				String newTitle = sc.nextLine();
 				newTitle = newTitle.strip();
 				if (newTitle.length() == 0 || newTitle.length() > Article.TITLE_LIMIT) {
-					ArticleException ae = new ArticleException("제목은 1글자 이상 30글자 이하로 작성해야만 합니다.");
-					throw ae;
+					throw new ArticleException("제목은 1글자 이상 30글자 이하로 작성해야만 합니다.");
 				}
 				articleToUpdate.updateTitle(newTitle);
 				System.out.println("게시글 제목 수정이 완료되었습니다.");
