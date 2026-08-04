@@ -20,7 +20,7 @@ public class DateTime {
 		System.out.println(now);
 	}
 
-	public static void printNowDateTime() {
+	public static void printNowDateTime() {	
 		LocalDateTime now = LocalDateTime.now();
 		System.out.println(now);
 	}
