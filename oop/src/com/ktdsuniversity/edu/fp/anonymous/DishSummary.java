@@ -83,15 +83,20 @@ public class DishSummary {
 			}
 		}
 	}
-	
+
 	public void printAllDishesBy(Predicate<Dish> cond) {
-		for (int i = 0; i < this.dishes.size(); ++i) {
-			if (cond.test(this.dishes.get(i))) {
-				System.out.println(this.dishes.get(i));
+//		for (int i = 0; i < this.dishes.size(); ++i) {
+//			if (cond.test(this.dishes.get(i))) {
+//				System.out.println(this.dishes.get(i));
+//			}
+//		}
+		this.dishes.forEach((dish) -> {
+			if (cond.test(dish)) {
+				System.out.println(dish);
 			}
-		}
+		});
 	}
-	
+
 //
 //	public void printTotalCalories() {
 //		int totalCalories = 0;
