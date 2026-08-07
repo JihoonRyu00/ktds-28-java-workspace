@@ -1,6 +1,5 @@
 package com.ktdsuniversity.edu.fp.stream;
 
-import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -9,11 +8,10 @@ import com.ktdsuniversity.edu.fp.objects.DishList;
 import com.ktdsuniversity.edu.fp.objects.enums.DishType;
 
 /**
- * 스트립의 데이터를 변경시키는 Map 실습
+ * 스트림의 데이터를 변경시키는 Map 실습
  */
 public class Mapping {
 
-	private static final Comparator<? super Dish> Comparator = null;
 
 	public static void printDouble() {
 		List<Integer> numbers = List.of(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
