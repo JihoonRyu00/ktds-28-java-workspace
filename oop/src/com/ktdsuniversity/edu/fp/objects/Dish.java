@@ -39,4 +39,9 @@ public class Dish {
 				+ this.dishType + "]";
 	}
 
+	public static void main(String[] args) {
+		Dish dish = new Dish("돼지고기", FoodType.MEAT, 800, DishType.MEAT);
+		System.out.println(dish);
+		System.out.println("sdas");
+	}
 }

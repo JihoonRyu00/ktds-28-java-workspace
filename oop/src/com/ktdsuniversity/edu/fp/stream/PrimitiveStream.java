@@ -1,5 +1,6 @@
 package com.ktdsuniversity.edu.fp.stream;
 
+import java.util.ArrayList;
 import java.util.IntSummaryStatistics;
 import java.util.List;
 
@@ -103,5 +104,7 @@ public class PrimitiveStream {
 //		printMinNumStr();
 //		printSummaryStatistics();
 		printDishesAverageCalories();
+		List<List<Integer>> a = new ArrayList<>();
+		a.get(0);
 	}
 }
