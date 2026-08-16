@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.hw;
+package com.ktdsuniversity.edu.hw.first;
 
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
