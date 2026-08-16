@@ -11,9 +11,14 @@ public class Program {
 
 	public Program(String name, String startTime, String endTime) {
 		this.name = name;
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("H:m");
 		this.startTime = LocalTime.parse(startTime, formatter);
 		this.endTime = LocalTime.parse(endTime, formatter);
+	}
+
+	public Program(String name, int startTime, int endTime) {
+		// valid check 생략
+		this(name, startTime / 60 + ":" + startTime % 60, endTime / 60 + ":" + endTime % 60);
 	}
 
 	public LocalTime getStartTime() {
@@ -30,5 +35,11 @@ public class Program {
 
 	public boolean isAirTime(LocalTime now) {
 		return !(now.isBefore(startTime) || now.isAfter(endTime));
+	}
+
+	@Override
+	public String toString() {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm");
+		return this.name + "\n시작시간: " + startTime.format(formatter) + " 종료시간: " + endTime.format(formatter);
 	}
 }

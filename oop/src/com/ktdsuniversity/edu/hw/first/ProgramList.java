@@ -7,7 +7,7 @@ public class ProgramList {
 	private ProgramList() {
 	}
 
-	public static List<Program> makeDishList() {
+	public static List<Program> makeProgramList() {
 		return List.of(new Program("프로그램 1", "03:00", "05:00"), new Program("프로그램 2", "05:01", "06:30"),
 				new Program("프로그램 3", "06:31", "08:00"), new Program("프로그램 4", "08:01", "09:00"),
 				new Program("프로그램 5", "09:01", "10:00"), new Program("프로그램 6", "10:01", "12:00"),
