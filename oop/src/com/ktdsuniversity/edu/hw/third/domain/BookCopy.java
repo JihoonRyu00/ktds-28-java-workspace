@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.hw.third;
+package com.ktdsuniversity.edu.hw.third.domain;
 
 import java.time.LocalDate;
 
@@ -85,7 +85,7 @@ public class BookCopy {
 	public void setDiscarded() {
 		this.isDiscarded = true;
 	}
-	
+
 	public void rentTo(Member member) {
 		this.isRented = true;
 		this.rentalDate = LocalDate.now();
@@ -101,4 +101,23 @@ public class BookCopy {
 		this.isRented = false;
 		this.isReturned = true;
 	}
+
+	public String toCsvRow() {
+		String renterId = (this.renter != null) ? this.renter.getId() + "" : "NONE";
+		String rentalDateStr = (this.rentalDate != null) ? this.rentalDate.toString() : "NONE";
+		String returnDateStr = (this.returnDate != null) ? this.returnDate.toString() : "NONE";
+		return String.join(",", this.accessionNumber + "", this.originalBook.getISBN(), this.inboundDate.toString(),
+				this.isRented + "", rentalDateStr, returnDateStr, this.isReturned + "", this.isDiscarded + "",
+				renterId);
+	}
+
+	@Override
+	public String toString() {
+		String renterName = (renter != null) ? renter.getName() : "null";
+		return "BookCopy [accessionNumber=" + accessionNumber + ", originalBook=" + originalBook + ", renter="
+				+ renterName + ", inboundDate=" + inboundDate + ", rentalDate=" + rentalDate + ", returnDate="
+				+ returnDate + ", isRented=" + isRented + ", isReturned=" + isReturned + ", isDiscarded=" + isDiscarded
+				+ "]";
+	}
+
 }

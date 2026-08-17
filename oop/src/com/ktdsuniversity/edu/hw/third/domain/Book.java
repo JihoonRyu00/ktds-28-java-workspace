@@ -1,4 +1,4 @@
-package com.ktdsuniversity.edu.hw.third;
+package com.ktdsuniversity.edu.hw.third.domain;
 
 import java.time.LocalDate;
 
@@ -18,9 +18,9 @@ public class Book {
 	private int price;
 	private int totalRentalCount;
 
-	public Book(String iSBN, Genre genre, LocalDate publicationDate, String title, String subtitle, String publisher,
+	public Book(String ISBN, Genre genre, LocalDate publicationDate, String title, String subtitle, String publisher,
 			String author, int edition, int price) {
-		this.ISBN = iSBN;
+		this.ISBN = ISBN;
 		this.genre = genre;
 		this.publicationDate = publicationDate;
 		this.title = title;
@@ -74,6 +74,16 @@ public class Book {
 
 	public void increaseTotalRentalCount() {
 		this.totalRentalCount++;
+	}
+
+	public void setTotalRentalCount(int count) {
+		this.totalRentalCount = count;
+	}
+
+	public String toCsvRow() {
+		return String.join(",", this.ISBN, this.genre.name(), this.publicationDate.toString(), this.title,
+				this.subtitle, this.publisher, this.author, this.edition + "", this.price + "",
+				this.totalRentalCount + "");
 	}
 
 	@Override

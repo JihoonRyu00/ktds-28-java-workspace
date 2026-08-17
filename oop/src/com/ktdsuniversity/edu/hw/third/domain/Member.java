@@ -1,22 +1,28 @@
-package com.ktdsuniversity.edu.hw.third;
+package com.ktdsuniversity.edu.hw.third.domain;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class Member {
 
+	private final long id;
 	private List<BookCopy> rentedBooks;
 	private String name;
 	private String contact;
 	private int fine;
 	private int overdueCount;
 
-	public Member(String name, String contact) {
+	public Member(long id, String name, String contact) {
+		this.id = id;
 		this.rentedBooks = new ArrayList<>();
 		this.name = name;
 		this.contact = contact;
 		this.fine = 0;
 		this.overdueCount = 0;
+	}
+
+	public long getId() {
+		return this.id;
 	}
 
 	public List<BookCopy> getRentedBooks() {
@@ -37,6 +43,14 @@ public class Member {
 
 	public int getOverdueCount() {
 		return this.overdueCount;
+	}
+
+	public void setFine(int fine) {
+		this.fine = fine;
+	}
+
+	public void setOverdueCount(int count) {
+		this.overdueCount = count;
 	}
 
 	public void updateFine(int amount) {
@@ -63,9 +77,14 @@ public class Member {
 		return this.rentedBooks.contains(book);
 	}
 
+	public String toCsvRow() {
+		return String.join(",", this.id + "", this.name, this.contact, this.fine + "", this.overdueCount + "");
+	}
+
 	@Override
 	public String toString() {
-		return "이름: " + this.name + " 연락처: " + this.contact + "\n벌금: " + this.fine + " 반납기간 초과 횟수: " + this.overdueCount
-				+ "\n대여한 도서의 목록:\n" + this.rentedBooks;
+		return "Member [id=" + id + ", rentedBooks=" + rentedBooks + ", name=" + name + ", contact=" + contact
+				+ ", fine=" + fine + ", overdueCount=" + overdueCount + "]";
 	}
+
 }
