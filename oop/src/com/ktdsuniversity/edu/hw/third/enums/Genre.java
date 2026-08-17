@@ -1,0 +1,6 @@
+package com.ktdsuniversity.edu.hw.third.enums;
+
+public enum Genre {
+	SCI_FI, FANTASY, HORROR, ROMANCE, HISTORICAL_FICTION, ADVENTURE, ESSAY, SELF_HELP, BIOGRAPHY, HUMANITIES, SCIENCE,
+	HISTORY
+}
