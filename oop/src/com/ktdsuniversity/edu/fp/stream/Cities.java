@@ -148,26 +148,34 @@ public class Cities {
 			System.out.println(key + ": " + cityMap.get(key));
 		}
 	}
+
 	// 14. latitude와 longitude가 없는 도시들의 이름만 출력해본다.
-	public static void print(String path, String fileName) {
-	Stream<City> cityList = CityList.loadCityStream(path, fileName);
-	cityList.filter(city->city.getLatitude()==null && city.getLongitude()==null) // Stream<City>
-			.map(City::getName) // Strean<String>
-			.
-	;
-}
+	public static void printCityNamesWhichHasNoLatitudeAndLongitude(String path, String fileName) {
+		Stream<City> cityList = CityList.loadCityStream(path, fileName);
+		cityList.filter(city -> city.getLatitude() == null && city.getLongitude() == null) // Stream<City>
+				.map(City::getName) // Strean<String>
+				.forEach(System.out::println) // void
+		;
+	}
+
 	// 15. 국가명(countryName)이 Canada인 도시 중 3개는 건너띄고 2개만 출력해본다.
-//	public static void print(String path, String fileName) {
-//	Stream<City> cityList = CityList.loadCityStream(path, fileName);
-//	cityList.
-//	;
-//}
+	public static void prinTwoCitiesAfterThreeWhichCountryNameIsCanada(String path, String fileName) {
+		Stream<City> cityList = CityList.loadCityStream(path, fileName);
+		cityList.sequential() // Stream<City>
+				.filter(city -> city.getCountryName().equals("Canada")) // Stream<City>
+				.skip(3) // Stream<City>
+				.limit(2) // Stream<City>
+				.forEach(System.out::println) // void
+		;
+	}
+
 	// 16. level과 parentId가 0보다 큰 도시만 출력해본다.
-//	public static void print(String path, String fileName) {
-//	Stream<City> cityList = CityList.loadCityStream(path, fileName);
-//	cityList.
-//	;
-//}
+	public static void printCitiesWhichLevelAndParentIdGTZero(String path, String fileName) {
+		Stream<City> cityList = CityList.loadCityStream(path, fileName);
+		cityList.filter(city -> city.getLevel() > 0 && city.getParentId() > 0) // Stream<City>
+				.forEach(System.out::println) // void
+		;
+	}
 
 	public static void main(String[] args) {
 
@@ -187,6 +195,9 @@ public class Cities {
 //		printCitiesAscending(path, fileName);
 //		printCitiesWhichIso2IsNumeric(path, fileName);
 //		printAscendingCountryNameWhichIso2IsNotNumeric(path, fileName);
-		printGroupsByCountryName(path, fileName);
+//		printGroupsByCountryName(path, fileName);
+//		printCityNamesWhichHasNoLatitudeAndLongitude(path, fileName);
+//		prinTwoCitiesAfterThreeWhichCountryNameIsCanada(path, fileName);
+		printCitiesWhichLevelAndParentIdGTZero(path, fileName);
 	}
 }
