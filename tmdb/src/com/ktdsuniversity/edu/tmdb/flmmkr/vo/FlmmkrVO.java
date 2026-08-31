@@ -1,5 +1,8 @@
 package com.ktdsuniversity.edu.tmdb.flmmkr.vo;
 
+import com.ktdsuniversity.edu.tmdb.invlvd.vo.InvlvdVO;
+import com.ktdsuniversity.edu.tmdb.mv.vo.MvVO;
+
 public class FlmmkrVO {
 
 	private String flmmkrId;
@@ -7,6 +10,11 @@ public class FlmmkrVO {
 	private String mvId;
 	private String prt;
 	private String rl;
+
+	// 한 명의 참여자가 하나의 영화를 제작했다.
+	private MvVO mvVO;
+	// 제작자의 정보
+	private InvlvdVO invlvdVO;
 
 	public String getFlmmkrId() {
 		return this.flmmkrId;
@@ -37,6 +45,19 @@ public class FlmmkrVO {
 	}
 	public void setRl(String rl) {
 		this.rl = rl;
+	}
+
+	public MvVO getMvVO() {
+		return this.mvVO;
+	}
+	public void setMvVO(MvVO mvVO) {
+		this.mvVO = mvVO;
+	}
+	public InvlvdVO getInvlvdVO() {
+		return this.invlvdVO;
+	}
+	public void setInvlvdVO(InvlvdVO invlvdVO) {
+		this.invlvdVO = invlvdVO;
 	}
 
 	@Override
