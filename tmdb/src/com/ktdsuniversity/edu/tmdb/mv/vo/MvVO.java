@@ -92,10 +92,10 @@ public class MvVO {
 	public void setFbUrl(String fbUrl) {
 		this.fbUrl = fbUrl;
 	}
-	public String getxUrl() {
+	public String getXUrl() {
 		return this.xUrl;
 	}
-	public void setxUrl(String xUrl) {
+	public void setXUrl(String xUrl) {
 		this.xUrl = xUrl;
 	}
 	public String getInstaUrl() {
